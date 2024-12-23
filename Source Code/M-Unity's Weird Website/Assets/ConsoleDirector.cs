@@ -1,20 +1,21 @@
 using UnityEngine;
+using Unity.Burst;
 using TMPro;
+[BurstCompile]
 public class ConsoleDirector : MonoBehaviour
 {
     private TMP_InputField Console;
-    private string TempText = "AAAAAA";
+    private string TempText = "A";
+    [SerializeField] private string WelcomeText;
     [SerializeField] private string DefaultText;
     private void Awake()
     {
         Console = GetComponent<TMP_InputField>();
-        Console.text = DefaultText;
-        Console.caretPosition = DefaultText.Length;
+        Console.text = WelcomeText;
+        Console.text += DefaultText;
+        Console.caretPosition = Console.text.Length;
+        TempText = null;
         TempText = Console.text;
-    }
-    private void Update()
-    {
-
     }
     public void ChangeHandler()
     {
@@ -31,7 +32,6 @@ public class ConsoleDirector : MonoBehaviour
     }
     public void CommandHandler(string Command)
     {
-        print(Command);
         if (Command == "echo " + Command.TrimStart("echo ".ToCharArray()) || Command == "echo")
         {   
             Console.text += Command.TrimStart("echo ".ToCharArray()) + "\n" + DefaultText;
@@ -51,7 +51,7 @@ public class ConsoleDirector : MonoBehaviour
         }
         else
         {
-            Console.text += "Unknown command or command doesn't have this argument" + "\n" + DefaultText;
+            Console.text += "mish: Unknown command or command doesn't have this argument" + "\n" + DefaultText;
         }
     }
     private void UpdateText()
