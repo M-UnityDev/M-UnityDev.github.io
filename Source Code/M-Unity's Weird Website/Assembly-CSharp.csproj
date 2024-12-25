@@ -93,6 +93,7 @@
     <Compile Include="Assets/TextMesh Pro/Examples &amp; Extras/Scripts/TextMeshSpawner.cs" />
     <Compile Include="Assets/TextMesh Pro/Examples &amp; Extras/Scripts/CameraController.cs" />
     <Compile Include="Assets/TextMesh Pro/Examples &amp; Extras/Scripts/Benchmark03.cs" />
+    <Compile Include="Assets/MUUBDirector.cs" />
     <Compile Include="Assets/TextMesh Pro/Examples &amp; Extras/Scripts/DropdownSample.cs" />
     <Compile Include="Assets/TextMesh Pro/Examples &amp; Extras/Scripts/VertexColorCycler.cs" />
     <Compile Include="Assets/TextMesh Pro/Examples &amp; Extras/Scripts/ObjectSpin.cs" />
@@ -119,6 +120,7 @@
     <None Include="Assets/TextMesh Pro/Examples &amp; Extras/Fonts/Oswald-Bold - OFL.txt" />
     <None Include="Assets/RoslynCSharp/Plugin/System.Threading.Thread.dll" />
     <None Include="Assets/TextMesh Pro/Examples &amp; Extras/Fonts/Roboto-Bold - AFL.txt" />
+    <None Include="Assets/oldschool_pc_font_pack_v2.2_FULL/UPGRADING.TXT" />
     <None Include="Assets/RoslynCSharp/Plugin/System.Security.Cryptography.X509Certificates.dll" />
     <None Include="Assets/TextMesh Pro/Examples &amp; Extras/Fonts/Anton OFL.txt" />
     <None Include="Assets/TextMesh Pro/Shaders/TMPro_Mobile.cginc" />
@@ -136,6 +138,7 @@
     <None Include="Assets/TextMesh Pro/Shaders/TMP_Bitmap-Custom-Atlas.shader" />
     <None Include="Assets/TextMesh Pro/Shaders/TMP_SDF.shader" />
     <None Include="Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile SSD.shader" />
+    <None Include="Assets/oldschool_pc_font_pack_v2.2_FULL/LICENSE.TXT" />
     <None Include="Assets/RoslynCSharp/Plugin/System.Xml.XPath.XDocument.dll" />
     <None Include="Assets/TextMesh Pro/Resources/LineBreaking Leading Characters.txt" />
     <None Include="Assets/TextMesh Pro/Shaders/TMPro_Properties.cginc" />
@@ -151,6 +154,7 @@
     <None Include="Assets/RoslynCSharp/Plugin/System.Xml.XmlDocument.dll" />
     <None Include="Assets/RoslynCSharp/Plugin/System.Xml.XPath.dll" />
     <None Include="Assets/RoslynCSharp/Plugin/System.Security.Cryptography.Encoding.dll" />
+    <None Include="Assets/oldschool_pc_font_pack_v2.2_FULL/README.TXT" />
     <None Include="Assets/TextMesh Pro/Shaders/TMP_SDF Overlay.shader" />
     <None Include="Assets/RoslynCSharp/Plugin/Microsoft.CodeAnalysis.dll" />
     <None Include="Assets/TextMesh Pro/Shaders/TMP_Bitmap-Mobile.shader" />
@@ -616,40 +620,16 @@
       <HintPath>Library/PackageCache/com.unity.collections/Unity.Collections.LowLevel.ILSupport/Unity.Collections.LowLevel.ILSupport.dll</HintPath>
       <Private>False</Private>
     </Reference>
-    <Reference Include="nunit.framework">
-      <HintPath>Library/PackageCache/com.unity.ext.nunit/net40/unity-custom/nunit.framework.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="Unity.VisualScripting.Antlr3.Runtime">
-      <HintPath>Library/PackageCache/com.unity.visualscripting/Runtime/VisualScripting.Flow/Dependencies/NCalc/Unity.VisualScripting.Antlr3.Runtime.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="Mono.Cecil">
-      <HintPath>Library/PackageCache/com.unity.nuget.mono-cecil/Mono.Cecil.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="Trivial.Mono.Cecil">
-      <HintPath>Assets/RoslynCSharp/Plugin/Trivial.Mono.Cecil.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="Trivial.Mono.Cecil.Mdb">
-      <HintPath>Assets/RoslynCSharp/Plugin/Trivial.Mono.Cecil.Mdb.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="System.Reflection.Metadata">
-      <HintPath>Assets/RoslynCSharp/Plugin/System.Reflection.Metadata.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
     <Reference Include="Trivial.CodeSecurity">
       <HintPath>Assets/RoslynCSharp/Plugin/Trivial.CodeSecurity.dll</HintPath>
       <Private>False</Private>
     </Reference>
-    <Reference Include="System.Collections.Immutable">
-      <HintPath>Assets/RoslynCSharp/Plugin/System.Collections.Immutable.dll</HintPath>
+    <Reference Include="nunit.framework">
+      <HintPath>Library/PackageCache/com.unity.ext.nunit/net40/unity-custom/nunit.framework.dll</HintPath>
       <Private>False</Private>
     </Reference>
-    <Reference Include="Microsoft.CodeAnalysis.CSharp">
-      <HintPath>Assets/RoslynCSharp/Plugin/Microsoft.CodeAnalysis.CSharp.dll</HintPath>
+    <Reference Include="Trivial.Mono.Cecil">
+      <HintPath>Assets/RoslynCSharp/Plugin/Trivial.Mono.Cecil.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="System.Runtime.CompilerServices.Unsafe">
@@ -660,12 +640,36 @@
       <HintPath>Assets/RoslynCSharp/Plugin/Trivial.Mono.Cecil.Pdb.dll</HintPath>
       <Private>False</Private>
     </Reference>
-    <Reference Include="Microsoft.CodeAnalysis">
-      <HintPath>Assets/RoslynCSharp/Plugin/Microsoft.CodeAnalysis.dll</HintPath>
+    <Reference Include="System.Collections.Immutable">
+      <HintPath>Assets/RoslynCSharp/Plugin/System.Collections.Immutable.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Trivial.Mono.Cecil.Mdb">
+      <HintPath>Assets/RoslynCSharp/Plugin/Trivial.Mono.Cecil.Mdb.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="DOTween">
       <HintPath>Assets/Plugins/Demigiant/DOTween/DOTween.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Unity.VisualScripting.Antlr3.Runtime">
+      <HintPath>Library/PackageCache/com.unity.visualscripting/Runtime/VisualScripting.Flow/Dependencies/NCalc/Unity.VisualScripting.Antlr3.Runtime.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Reflection.Metadata">
+      <HintPath>Assets/RoslynCSharp/Plugin/System.Reflection.Metadata.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Microsoft.CodeAnalysis.CSharp">
+      <HintPath>Assets/RoslynCSharp/Plugin/Microsoft.CodeAnalysis.CSharp.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Mono.Cecil">
+      <HintPath>Library/PackageCache/com.unity.nuget.mono-cecil/Mono.Cecil.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Microsoft.CodeAnalysis">
+      <HintPath>Assets/RoslynCSharp/Plugin/Microsoft.CodeAnalysis.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Unity.Android.Types">
@@ -1374,11 +1378,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="Assembly-CSharp-firstpass.csproj" />
     <ProjectReference Include="RoslynCSharp.Editor.csproj" />
     <ProjectReference Include="RoslynCSharp.Compiler.csproj" />
     <ProjectReference Include="RoslynCSharp.Examples.csproj" />
     <ProjectReference Include="RoslynCSharp.csproj" />
+    <ProjectReference Include="DOTween.Modules.csproj" />
   </ItemGroup>
   <Import Project="Sdk.targets" Sdk="Microsoft.NET.Sdk" />
   <ItemGroup>
