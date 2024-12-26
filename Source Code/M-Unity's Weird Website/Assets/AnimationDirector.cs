@@ -1,5 +1,7 @@
 using DG.Tweening;
 using UnityEngine;
+using Unity.Burst;
+[BurstCompile]
 public class AnimationDirector : MonoBehaviour
 {
     public enum BodyPart
@@ -19,16 +21,6 @@ public class AnimationDirector : MonoBehaviour
     public GameObject LegRight;
     public GameObject Head;
     private GameObject CurrentPart;
-    private void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    private void Update()
-    {
-        //print(BodyPart.Body.ToString());
-    }
     public void MovePart(BodyPart Part, Vector3 MovePosition, float MoveDuration)
     {
         if (Part.Equals(BodyPart.Whole)) CurrentPart = gameObject;
@@ -43,7 +35,7 @@ public class AnimationDirector : MonoBehaviour
     }
     public void DefaultMove()
     {
-        MovePart(BodyPart.Whole, new Vector3 (2,0,0), 2);
+        MovePart(BodyPart.Whole, new Vector3 (2,0,0), 1);
         RotatePart(BodyPart.Whole, new Vector3 (0,-90,0), 2);
         RotatePart(BodyPart.ArmLeft, new Vector3 (-125,0,0), 2);
     }
