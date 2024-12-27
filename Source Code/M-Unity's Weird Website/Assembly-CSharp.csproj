@@ -80,6 +80,7 @@
     <Compile Include="Assets/TextMesh Pro/Examples &amp; Extras/Scripts/SkewTextExample.cs" />
     <Compile Include="Assets/TextMesh Pro/Examples &amp; Extras/Scripts/WarpTextExample.cs" />
     <Compile Include="Assets/TextMesh Pro/Examples &amp; Extras/Scripts/ShaderPropAnimator.cs" />
+    <Compile Include="Assets/DarkDirector.cs" />
     <Compile Include="Assets/TextMesh Pro/Examples &amp; Extras/Scripts/TMP_TextInfoDebugTool.cs" />
     <Compile Include="Assets/TextMesh Pro/Examples &amp; Extras/Scripts/VertexShakeA.cs" />
     <Compile Include="Assets/AnimationDirector.cs" />
@@ -95,6 +96,7 @@
     <Compile Include="Assets/TextMesh Pro/Examples &amp; Extras/Scripts/TextMeshSpawner.cs" />
     <Compile Include="Assets/TextMesh Pro/Examples &amp; Extras/Scripts/CameraController.cs" />
     <Compile Include="Assets/TextMesh Pro/Examples &amp; Extras/Scripts/Benchmark03.cs" />
+    <Compile Include="Assets/MainMenu.cs" />
     <Compile Include="Assets/MUUBDirector.cs" />
     <Compile Include="Assets/TextMesh Pro/Examples &amp; Extras/Scripts/DropdownSample.cs" />
     <Compile Include="Assets/TextMesh Pro/Examples &amp; Extras/Scripts/VertexColorCycler.cs" />
@@ -107,6 +109,7 @@
     <Compile Include="Assets/ConsoleDirector.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Assets/Shaders/CRTShader.shader" />
     <None Include="Assets/TextMesh Pro/Shaders/TMPro.cginc" />
     <None Include="Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile Overlay.shader" />
     <None Include="Assets/TextMesh Pro/Examples &amp; Extras/Fonts/Roboto-Bold - License.txt" />
@@ -127,9 +130,11 @@
     <None Include="Assets/TextMesh Pro/Examples &amp; Extras/Fonts/Anton OFL.txt" />
     <None Include="Assets/TextMesh Pro/Shaders/TMPro_Mobile.cginc" />
     <None Include="Assets/TextMesh Pro/Shaders/TMP_SDF SSD.shader" />
+    <None Include="Assets/Shaders/Other/PS1AffineFog.shader" />
     <None Include="Assets/TextMesh Pro/Shaders/TMP_SDF-Surface-Mobile.shader" />
     <None Include="Assets/TextMesh Pro/Shaders/SDFFunctions.hlsl" />
     <None Include="Assets/RoslynCSharp/Error On Import.txt" />
+    <None Include="Assets/Shaders/Fog.shader" />
     <None Include="Assets/RoslynCSharp/Plugin/System.Security.Cryptography.Primitives.dll" />
     <None Include="Assets/RoslynCSharp/Plugin/Trivial.Mono.Cecil.Pdb.dll" />
     <None Include="Assets/RoslynCSharp/Plugin/System.Diagnostics.StackTrace.dll" />
@@ -147,17 +152,23 @@
     <None Include="Assets/RoslynCSharp/Plugin/System.Diagnostics.FileVersionInfo.dll" />
     <None Include="Assets/TextMesh Pro/Shaders/TMPro_Surface.cginc" />
     <None Include="Assets/RoslynCSharp/Plugin/System.Reflection.Metadata.dll" />
+    <None Include="Assets/Shaders/cginc/voronoi.cginc" />
     <None Include="Assets/RoslynCSharp/Plugin/System.Threading.Tasks.Extensions.dll" />
     <None Include="Assets/RoslynCSharp/Plugin/System.AppContext.dll" />
     <None Include="Assets/RoslynCSharp/Plugin/Microsoft.CodeAnalysis.CSharp.dll" />
     <None Include="Assets/TextMesh Pro/Resources/LineBreaking Following Characters.txt" />
+    <None Include="Assets/Shaders/Dithering.shader" />
     <None Include="Assets/RoslynCSharp/Plugin/System.Console.dll" />
+    <None Include="Assets/Shaders/Pixelation.shader" />
+    <None Include="Assets/Shaders/Other/PS1AffineFogPolyBrush.shader" />
     <None Include="Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile Masking.shader" />
+    <None Include="Assets/Shaders/cginc/DitheringPatterns.cginc" />
     <None Include="Assets/RoslynCSharp/Plugin/System.Xml.XmlDocument.dll" />
     <None Include="Assets/RoslynCSharp/Plugin/System.Xml.XPath.dll" />
     <None Include="Assets/RoslynCSharp/Plugin/System.Security.Cryptography.Encoding.dll" />
     <None Include="Assets/oldschool_pc_font_pack_v2.2_FULL/README.TXT" />
     <None Include="Assets/TextMesh Pro/Shaders/TMP_SDF Overlay.shader" />
+    <None Include="Assets/Shaders/HLSL/CustomLighting.hlsl" />
     <None Include="Assets/RoslynCSharp/Plugin/Microsoft.CodeAnalysis.dll" />
     <None Include="Assets/TextMesh Pro/Shaders/TMP_Bitmap-Mobile.shader" />
     <None Include="Assets/TextMesh Pro/Fonts/LiberationSans - OFL.txt" />
@@ -1198,6 +1209,10 @@
       <HintPath>Library/ScriptAssemblies/Unity.RenderPipelines.Universal.Shaders.dll</HintPath>
       <Private>False</Private>
     </Reference>
+    <Reference Include="Unity.Cinemachine.Editor">
+      <HintPath>Library/ScriptAssemblies/Unity.Cinemachine.Editor.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
     <Reference Include="Unity.RenderPipelines.Core.Runtime.Shared">
       <HintPath>Library/ScriptAssemblies/Unity.RenderPipelines.Core.Runtime.Shared.dll</HintPath>
       <Private>False</Private>
@@ -1234,12 +1249,20 @@
       <HintPath>Library/ScriptAssemblies/Unity.Multiplayer.Center.Editor.dll</HintPath>
       <Private>False</Private>
     </Reference>
+    <Reference Include="Unity.Splines">
+      <HintPath>Library/ScriptAssemblies/Unity.Splines.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
     <Reference Include="Unity.Mathematics.Editor">
       <HintPath>Library/ScriptAssemblies/Unity.Mathematics.Editor.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Unity.RenderPipelines.GPUDriven.Runtime">
       <HintPath>Library/ScriptAssemblies/Unity.RenderPipelines.GPUDriven.Runtime.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Unity.Cinemachine">
+      <HintPath>Library/ScriptAssemblies/Unity.Cinemachine.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Autodesk.Fbx">
@@ -1264,6 +1287,10 @@
     </Reference>
     <Reference Include="Unity.RenderPipelines.Universal.Config.Runtime">
       <HintPath>Library/ScriptAssemblies/Unity.RenderPipelines.Universal.Config.Runtime.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Unity.Splines.Editor">
+      <HintPath>Library/ScriptAssemblies/Unity.Splines.Editor.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Unity.RenderPipelines.Universal.Editor">
@@ -1348,6 +1375,10 @@
     </Reference>
     <Reference Include="Unity.Sysroot.Linux_x86_64">
       <HintPath>Library/ScriptAssemblies/Unity.Sysroot.Linux_x86_64.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Unity.2D.Sprite.Editor">
+      <HintPath>Library/ScriptAssemblies/Unity.2D.Sprite.Editor.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Unity.TextMeshPro.Editor">
