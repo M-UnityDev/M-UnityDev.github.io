@@ -70,7 +70,7 @@ public class MUUBDirector : MonoBehaviour
         switch (OSName)
         {
             case "5MBD":
-                SceneManager.LoadScene("[5MBD]Console");
+                SceneManager.LoadScene("[5MBD]CutScene");
                 break;
             default:
                 Console.text += "muub: Unknown OS \n" + DefaultText;

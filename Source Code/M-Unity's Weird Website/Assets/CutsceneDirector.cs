@@ -4,15 +4,13 @@ public class CutsceneDirector : MonoBehaviour
 {
     [SerializeField] private AnimationDirector MUnity;
     [SerializeField] private GameObject RunningCactus;
-    private void Start()
+    private void Awake()
     {
-        StartCoroutine(Walking(MUnity,0.75f));
 
-        //StartCoroutine(nameof(CutScene));
     }
-    private void FixedUpdate()
+    public void CutSceneStart()
     {
-        MUnity.Head.transform.Rotate(0,15,0);
+        StartCoroutine(nameof(CutScene));
     }
     private IEnumerator CutScene()
     {
