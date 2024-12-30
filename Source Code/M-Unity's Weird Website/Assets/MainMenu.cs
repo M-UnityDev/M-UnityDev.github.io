@@ -6,6 +6,8 @@ public class MainMenu : MonoBehaviour
 {
     [SerializeField] private RectTransform LogoText;
     [SerializeField] private RectTransform Buttons;
+    [SerializeField] private DarkDirector Dark;
+    
     [SerializeField] private CutsceneDirector CutScene;
     private int pos = 128;
     private int posbtn = -768;
@@ -20,6 +22,7 @@ public class MainMenu : MonoBehaviour
     }
     public void StartGame()
     {
+        Dark.Dark();
         CutScene.CutSceneStart();
     }
     public void ExitGame()

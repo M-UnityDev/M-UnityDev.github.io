@@ -21,22 +21,16 @@ public class AnimationDirector : MonoBehaviour
     public GameObject LegRight;
     public GameObject Head;
     private GameObject CurrentPart;
-    public void MovePart(BodyPart Part, Vector3 MovePosition, float MoveDuration)
+    public void MovePart(BodyPart Part, Vector3 MovePosition, float MoveDuration, Ease AnimationEase)
     {
         if (Part.Equals(BodyPart.Whole)) CurrentPart = gameObject;
         else CurrentPart = GetType().GetField(Part.ToString()).GetValue(this) as GameObject;
-        CurrentPart.transform.DOLocalMove(MovePosition,MoveDuration);
+        CurrentPart.transform.DOLocalMove(MovePosition,MoveDuration).SetEase(AnimationEase);
     }
-    public void RotatePart(BodyPart Part, Vector3 RotatePosition, float RotateDuration)
+    public void RotatePart(BodyPart Part, Vector3 RotatePosition, float RotateDuration, Ease AnimationEase)
     {
         if (Part.Equals(BodyPart.Whole)) CurrentPart = gameObject;
         else CurrentPart = GetType().GetField(Part.ToString()).GetValue(this) as GameObject;
-        CurrentPart.transform.DOLocalRotate(RotatePosition,RotateDuration);
-    }
-    public void DefaultMove()
-    {
-        MovePart(BodyPart.Whole, new Vector3 (2,0,0), 1);
-        RotatePart(BodyPart.Whole, new Vector3 (0,-90,0), 2);
-        RotatePart(BodyPart.ArmLeft, new Vector3 (-125,0,0), 2);
+        CurrentPart.transform.DOLocalRotate(RotatePosition,RotateDuration).SetEase(AnimationEase);
     }
 }
