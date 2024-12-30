@@ -53,12 +53,13 @@ public class CutsceneDirector : MonoBehaviour
         Chair.transform.DORotate(new Vector3(90,270,0), 1).SetEase(Ease.InOutCubic);
         CutCamera2.SetActive(false);
         yield return new WaitForSeconds(1);
-        Chair.transform.DOMoveZ(-2.8f,1).SetEase(Ease.InCubic);
-        Chair.transform.DORotate(new Vector3(90,0,0), 1).SetEase(Ease.InOutCubic);
-        yield return new WaitForSeconds(1);
-        Chair.transform.DOMoveX(-0.2f,1).SetEase(Ease.InCubic);
-        MUnity.RotatePart(AnimationDirector.BodyPart.Head,new Vector3(0,0,0),1, Ease.InOutCubic);
-        
+        Chair.transform.DOMoveZ(-3.05f,1).SetEase(Ease.InCubic);
+        yield return new WaitForSeconds(0.75f);
+        Chair.transform.DORotate(new Vector3(90,0,0), 1).SetEase(Ease.InCubic);
+        Chair.transform.DOMoveX(0.5f,2).SetEase(Ease.OutCubic);
+        MUnity.RotatePart(AnimationDirector.BodyPart.Head,new Vector3(0,0,0),2, Ease.InOutCubic);
+        MUnity.RotatePart(AnimationDirector.BodyPart.ArmRight,new Vector3(-90,0,0),1, Ease.InOutCubic);
+        MUnity.RotatePart(AnimationDirector.BodyPart.ArmLeft,new Vector3(-90,0,0),1, Ease.InOutCubic);
     }
     private IEnumerator Walking(AnimationDirector Player, float Speed)
     {
