@@ -32,9 +32,9 @@ public class CutsceneDirector : MonoBehaviour
         MenuCamera.SetActive(false);
         yield return new WaitForSeconds(1);
         Destroy(UICanvas);
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(1);
         Dark.UnDark();
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(3);
         Lights.SetActive(true);
         LaptopScreen.Change();
         yield return new WaitForSeconds(2);
@@ -59,23 +59,41 @@ public class CutsceneDirector : MonoBehaviour
         Chair.transform.DORotate(new Vector3(90,0,0), 1).SetEase(Ease.InCubic);
         yield return new WaitForSeconds(0.75f);
         Chair.transform.DOMoveX(0.5f,2).SetEase(Ease.OutCubic);
-        MUnity.RotatePart(AnimationDirector.BodyPart.Head,new Vector3(0,0,0),2, Ease.InOutCubic);
+        MUnity.RotatePart(AnimationDirector.BodyPart.Head,new Vector3(0,0,0),1.5f, Ease.InOutCubic);
         MUnity.RotatePart(AnimationDirector.BodyPart.ArmRight,new Vector3(-70,0,0),1, Ease.InOutCubic);
         MUnity.RotatePart(AnimationDirector.BodyPart.ArmLeft,new Vector3(-70,0,0),1, Ease.InOutCubic);
+        yield return new WaitForSeconds(1.5f);
+        StartCoroutine(Typing(MUnity, 0.2f));
+        yield return new WaitForSeconds(2);
+        MUnity.RotatePart(AnimationDirector.BodyPart.Head, new Vector3(2, -60, 0), 1, Ease.InOutCubic);
+        yield return new WaitForSeconds(1.5f);
+        MUnity.RotatePart(AnimationDirector.BodyPart.Head, new Vector3(0, 0, 0), 1, Ease.InOutCubic);
     }
     private IEnumerator Walking(AnimationDirector Player, float Speed)
     {
-        while(true)
+        while (true)
         {
-            Player.RotatePart(AnimationDirector.BodyPart.LegRight,new Vector3(-20,0,0), Speed, Ease.InFlash);
-            Player.RotatePart(AnimationDirector.BodyPart.LegLeft,new Vector3(20,0,0), Speed, Ease.InFlash);
-            Player.RotatePart(AnimationDirector.BodyPart.ArmRight,new Vector3(20,0,0), Speed, Ease.InFlash);
-            Player.RotatePart(AnimationDirector.BodyPart.ArmLeft,new Vector3(-20,0,0), Speed, Ease.InFlash);
+            Player.RotatePart(AnimationDirector.BodyPart.LegRight, new Vector3(-20, 0, 0), Speed, Ease.InFlash);
+            Player.RotatePart(AnimationDirector.BodyPart.LegLeft, new Vector3(20, 0, 0), Speed, Ease.InFlash);
+            Player.RotatePart(AnimationDirector.BodyPart.ArmRight, new Vector3(20, 0, 0), Speed, Ease.InFlash);
+            Player.RotatePart(AnimationDirector.BodyPart.ArmLeft, new Vector3(-20, 0, 0), Speed, Ease.InFlash);
             yield return new WaitForSeconds(Speed);
-            Player.RotatePart(AnimationDirector.BodyPart.LegRight,new Vector3(20,0,0), Speed, Ease.InFlash);
-            Player.RotatePart(AnimationDirector.BodyPart.LegLeft,new Vector3(-20,0,0), Speed, Ease.InFlash);
-            Player.RotatePart(AnimationDirector.BodyPart.ArmRight,new Vector3(-20,0,0), Speed, Ease.InFlash);
-            Player.RotatePart(AnimationDirector.BodyPart.ArmLeft,new Vector3(20,0,0), Speed, Ease.InFlash);
+            Player.RotatePart(AnimationDirector.BodyPart.LegRight, new Vector3(20, 0, 0), Speed, Ease.InFlash);
+            Player.RotatePart(AnimationDirector.BodyPart.LegLeft, new Vector3(-20, 0, 0), Speed, Ease.InFlash);
+            Player.RotatePart(AnimationDirector.BodyPart.ArmRight, new Vector3(-20, 0, 0), Speed, Ease.InFlash);
+            Player.RotatePart(AnimationDirector.BodyPart.ArmLeft, new Vector3(20, 0, 0), Speed, Ease.InFlash);
+            yield return new WaitForSeconds(Speed);
+        }
+    }
+    private IEnumerator Typing(AnimationDirector Player, float Speed)
+    {
+        while (true)
+        {
+            Player.RotatePart(AnimationDirector.BodyPart.ArmRight, new Vector3(-80, 0, -30), Speed, Ease.InFlash);
+            Player.RotatePart(AnimationDirector.BodyPart.ArmLeft, new Vector3(-60, 0, 0), Speed, Ease.InFlash);
+            yield return new WaitForSeconds(Speed);
+            Player.RotatePart(AnimationDirector.BodyPart.ArmRight, new Vector3(-60, 0, -30), Speed, Ease.InFlash);
+            Player.RotatePart(AnimationDirector.BodyPart.ArmLeft, new Vector3(-80, 0, 0), Speed, Ease.InFlash);
             yield return new WaitForSeconds(Speed);
         }
     }

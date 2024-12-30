@@ -1,3 +1,4 @@
+
 using UnityEngine;
 using DG.Tweening;
 using System.Collections;
@@ -15,10 +16,10 @@ public class MainMenu : MonoBehaviour
     {
         DOTween.To(() => pos, x => pos = x, 0, 2).OnUpdate(() => {
             LogoText.offsetMin = new Vector2(LogoText.offsetMin.x, pos);
-        }).SetEase(Ease.InFlash);
+        }).SetEase(Ease.InOutCubic);
         DOTween.To(() => posbtn, x => posbtn = x, -128, 2).OnUpdate(() => {
             Buttons.anchoredPosition = new Vector2(Buttons.anchoredPosition.x, posbtn);
-        }).SetEase(Ease.InFlash);
+        }).SetEase(Ease.InOutCubic);
     }
     public void StartGame()
     {

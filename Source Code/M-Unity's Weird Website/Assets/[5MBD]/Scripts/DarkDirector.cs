@@ -13,6 +13,6 @@ public class DarkDirector : MonoBehaviour
         SpriteDark = GetComponent<SpriteRenderer>();
         if(IsDarkOnAwake) SpriteDark.color = Startcolor; UnDark();  
     }
-    public void Dark() => SpriteDark.DOColor(Startcolor,1).SetEase(Ease.InFlash);
-    public void UnDark() => SpriteDark.DOColor(Endcolor,1).SetEase(Ease.InFlash);
+    public void Dark() => SpriteDark.DOColor(Startcolor,1).SetEase(Ease.InCubic);
+    public void UnDark() => SpriteDark.DOColor(Endcolor,1).SetEase(Ease.InCubic);
 }
