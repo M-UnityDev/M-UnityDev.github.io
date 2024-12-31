@@ -2,6 +2,7 @@ using UnityEngine;
 using System.Collections;
 using DG.Tweening;
 using Unity.Burst;
+using UnityEngine.SceneManagement;
 [BurstCompile]
 public class CutsceneDirector : MonoBehaviour
 {
@@ -18,10 +19,6 @@ public class CutsceneDirector : MonoBehaviour
     [SerializeField] private Material[] WakeMaterial;
     [SerializeField] private Material[] HappyMaterial;
     [SerializeField] private GameObject RunningCactus;
-    private void Awake()
-    {
-
-    }
     public void CutSceneStart()
     {
         StartCoroutine(nameof(CutScene));
@@ -68,6 +65,10 @@ public class CutsceneDirector : MonoBehaviour
         MUnity.RotatePart(AnimationDirector.BodyPart.Head, new Vector3(2, -60, 0), 1, Ease.InOutCubic);
         yield return new WaitForSeconds(1.5f);
         MUnity.RotatePart(AnimationDirector.BodyPart.Head, new Vector3(0, 0, 0), 1, Ease.InOutCubic);
+        yield return new WaitForSeconds(2);
+        Dark.Dark();
+        SceneManager.LoadScene("[5MBD]Game");
+        yield return new WaitForSeconds(1);
     }
     private IEnumerator Walking(AnimationDirector Player, float Speed)
     {

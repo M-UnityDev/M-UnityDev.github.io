@@ -660,9 +660,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   WelcomeText: \n<align="center">MUUB   version 0.1 m-unity's weird website \n\nMinimal
-    BASH-like line editing is not supported. For the first word, TAB lists possible
-    commend completions. Anywhere else TAB lists possible device or file completions.
-    \n\n\n<align="left">
+    BASH-like line editing is not supported. To list all Operating Systems use command
+    list. To boot OS use boot (OSID). \n\n\n<align="left">
   DefaultText: 'muub> '
   OSListText: '\n 1. 5MBD (5 Minutes Before Deadline) \n 2. C&BD (Cubes & Buttons
     Demo) [Coming Soon]'

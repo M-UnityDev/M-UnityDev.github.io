@@ -1,11 +1,18 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class Ready : MonoBehaviour
 {
-    [SerializeField] private int indexscene;
-    public void LoadScene()
+    [SerializeField] private DarkDirector drk;
+    public void LoadScene(string scene)
     {
-        SceneManager.LoadScene(indexscene);
+        StartCoroutine(Loadscn(scene));
+    }
+    private IEnumerator Loadscn(string scene)
+    {
+        drk.Dark();
+        yield return new WaitForSeconds(1);
+        SceneManager.LoadScene(scene);
     }
 }

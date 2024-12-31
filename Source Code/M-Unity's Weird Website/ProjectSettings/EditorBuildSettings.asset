@@ -9,11 +9,14 @@ EditorBuildSettings:
     path: Assets/WebsiteBootloader/Scenes/MUUB.unity
     guid: 6cc29ff288b7c9e699d01dc1c53a5dc9
   - enabled: 1
-    path: Assets/WebsiteBootloader/Scenes/Console.unity
-    guid: 99c9720ab356a0642a771bea13969a05
-  - enabled: 1
     path: Assets/[5MBD]/Scenes/[5MBD]Cutscene.unity
     guid: 1a74c203487511bea8791178220fbee4
+  - enabled: 1
+    path: Assets/Scenes/[5MBD]Game.unity
+    guid: 3ec986dbe6c2d0e479563aa9165d9d5c
+  - enabled: 1
+    path: Assets/WebsiteBootloader/Scenes/Console.unity
+    guid: 99c9720ab356a0642a771bea13969a05
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   m_UseUCBPForAssetBundles: 0

@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Proverka : MonoBehaviour
 {
@@ -6,18 +7,11 @@ public class Proverka : MonoBehaviour
     [SerializeField] private GameObject creslo; 
     [SerializeField] private GameObject cover; 
     [SerializeField] private GameObject polka; 
-    [SerializeField] private GameObject readybutton;
+    [SerializeField] private Button readybutton;
 
-    void Update()
+    private void Update()
     {
-        if (AreAllObjectsVisible())
-        {
-            readybutton.SetActive(true);
-        }
-        else
-        {
-            readybutton.SetActive(false);
-        }
+        readybutton.interactable = AreAllObjectsVisible();
     }
 
     private bool AreAllObjectsVisible()

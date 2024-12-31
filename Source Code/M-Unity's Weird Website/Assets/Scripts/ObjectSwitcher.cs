@@ -1,6 +1,5 @@
 using UnityEngine;
 using UnityEngine.UI;
-
 public class ObjectSwitcher : MonoBehaviour
 {
     [SerializeField] private GameObject originalObject; 
