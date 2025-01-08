@@ -555,19 +555,7 @@ MonoBehaviour:
   m_CharacterLimit: 0
   m_OnEndEdit:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1816227161}
-        m_TargetAssemblyTypeName: MUUBDirector, Assembly-CSharp
-        m_MethodName: ChangeHandler
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   m_OnSubmit:
     m_PersistentCalls:
       m_Calls: []
@@ -663,8 +651,10 @@ MonoBehaviour:
     BASH-like line editing is not supported. To list all Operating Systems use command
     list. To boot OS use boot (OSID). \n\n\n<align="left">
   DefaultText: 'muub> '
-  OSListText: '\n 1. 5MBD (5 Minutes Before Deadline) \n 2. C&BD (Cubes & Buttons
-    Demo) [Coming Soon]'
+  OSList:
+  - 'MWW (M-Unity''s Weird Website) [Coming Soon]'
+  - 5MBD (5 Minutes Before Deadline)
+  - 'C&BD (Cubes & Buttons Demo) [Coming Soon]'
 --- !u!1 &1998261201
 GameObject:
   m_ObjectHideFlags: 0
