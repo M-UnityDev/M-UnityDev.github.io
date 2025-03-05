@@ -486,7 +486,8 @@ GameObject:
   - component: {fileID: 1816227159}
   - component: {fileID: 1816227158}
   - component: {fileID: 1816227157}
-  - component: {fileID: 1816227161}
+  - component: {fileID: 1816227163}
+  - component: {fileID: 1816227162}
   m_Layer: 0
   m_Name: Console
   m_TagString: Untagged
@@ -574,8 +575,8 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1816227161}
-        m_TargetAssemblyTypeName: MUUBDirector, Assembly-CSharp
+      - m_Target: {fileID: 1816227163}
+        m_TargetAssemblyTypeName: ConsoleHandler, Assembly-CSharp
         m_MethodName: ChangeHandler
         m_Mode: 1
         m_Arguments:
@@ -635,7 +636,7 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1816227161
+--- !u!114 &1816227162
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -644,17 +645,29 @@ MonoBehaviour:
   m_GameObject: {fileID: 1816227156}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3680d99619209c11ea6c3fec1be059d0, type: 3}
+  m_Script: {fileID: 11500000, guid: 2e3fc0f5ccf9d3efdb6d6dcfb40bfea8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OSList:
+  - 'MWW (M-Unity''s Weird Website) [Coming Soon]'
+  - 5MBD (5 Minutes Before Deadline)
+  - 'C&BD (Cubes & Buttons Demo) [Coming Soon]'
+--- !u!114 &1816227163
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1816227156}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1db37361110b2dba1a00c1335e006b97, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   WelcomeText: \n<align="center">MUUB   version 0.1 m-unity's weird website \n\nMinimal
     BASH-like line editing is not supported. To list all Operating Systems use command
     list. To boot OS use boot (OSID). \n\n\n<align="left">
   DefaultText: 'muub> '
-  OSList:
-  - 'MWW (M-Unity''s Weird Website) [Coming Soon]'
-  - 5MBD (5 Minutes Before Deadline)
-  - 'C&BD (Cubes & Buttons Demo) [Coming Soon]'
 --- !u!1 &1998261201
 GameObject:
   m_ObjectHideFlags: 0

@@ -486,6 +486,7 @@ GameObject:
   - component: {fileID: 1816227159}
   - component: {fileID: 1816227158}
   - component: {fileID: 1816227157}
+  - component: {fileID: 1816227161}
   - component: {fileID: 1816227160}
   m_Layer: 0
   m_Name: Console
@@ -574,8 +575,8 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1816227160}
-        m_TargetAssemblyTypeName: ConsoleDirector, Assembly-CSharp
+      - m_Target: {fileID: 1816227161}
+        m_TargetAssemblyTypeName: ConsoleHandler, Assembly-CSharp
         m_MethodName: ChangeHandler
         m_Mode: 1
         m_Arguments:
@@ -644,7 +645,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 1816227156}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9184d8b29780f9167a77c56aa963b77e, type: 3}
+  m_Script: {fileID: 11500000, guid: 715d0394603e589269d0b3490b52cb51, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1816227161
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1816227156}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1db37361110b2dba1a00c1335e006b97, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   WelcomeText: You're on M-Unity's Website btw\nThere is no <b>help</b> (at least
