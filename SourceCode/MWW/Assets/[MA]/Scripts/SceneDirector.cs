@@ -12,6 +12,7 @@ public class SceneDirector : MonoBehaviour
     [SerializeField] private GameObject CutCamera2;
     [SerializeField] private GameObject Lights;
     [SerializeField] private GameObject Chair;
+    [SerializeField] private DialGiver MUnityDial;
     [SerializeField] private ChangeMaterials LaptopScreen;
     [SerializeField] private ChangeMaterials MUnityHead;
     [SerializeField] private Material[] WakeMaterial;
@@ -27,25 +28,25 @@ public class SceneDirector : MonoBehaviour
     }
     private IEnumerator CutScene()
     {
-        yield return new WaitForSeconds(1);
-        Dark.UnDark();
-        yield return new WaitForSeconds(3);
-        Lights.SetActive(true);
-        LaptopScreen.Change();
+        //yield return new WaitForSeconds(1);
+        //Dark.UnDark();
+        //yield return new WaitForSeconds(3);
+        //Lights.SetActive(true);
+        //LaptopScreen.Change();
         yield return new WaitForSeconds(2);
         CutCamera1.SetActive(false);
-        MUnity.RotatePart(AnimationDirector.BodyPart.Head,new Vector3(35,0,0),4, Ease.Linear);
-        yield return new WaitForSeconds(4);
-        MUnityHead.Change(WakeMaterial);
-        MUnity.RotatePart(AnimationDirector.BodyPart.Head,new Vector3(0,0,0),0.5f, Ease.OutBounce);
+        //MUnity.RotatePart(AnimationDirector.BodyPart.Head,new Vector3(35,0,0),4, Ease.Linear);
+        //yield return new WaitForSeconds(4);
+        //MUnityHead.Change(WakeMaterial);
+        //MUnity.RotatePart(AnimationDirector.BodyPart.Head,new Vector3(0,0,0),0.5f, Ease.OutBounce);
         yield return new WaitForSeconds(2);
-        MUnity.RotatePart(AnimationDirector.BodyPart.Head,new Vector3(5,-60,0),2, Ease.InOutElastic);
-        yield return new WaitForSeconds(2);
-        MUnity.RotatePart(AnimationDirector.BodyPart.ArmRight,new Vector3(-170,0,-15),1, Ease.InOutCubic);
-        yield return new WaitForSeconds(2);
-        MUnity.RotatePart(AnimationDirector.BodyPart.ArmRight,new Vector3(-20,0,0),2, Ease.InOutElastic);
-        yield return new WaitForSeconds(2);
-        MUnityHead.Change(HappyMaterial);
+        MUnity.RotatePart(AnimationDirector.BodyPart.Head,new Vector3(5,-60,0),2, Ease.InOutCubic);
+        //yield return new WaitForSeconds(2);
+        //MUnity.RotatePart(AnimationDirector.BodyPart.ArmRight,new Vector3(-170,0,-15),1, Ease.InOutCubic);
+        //yield return new WaitForSeconds(2);
+        //MUnity.RotatePart(AnimationDirector.BodyPart.ArmRight,new Vector3(-20,0,0),2, Ease.InOutElastic);
+        //yield return new WaitForSeconds(2);
+        //MUnityHead.Change(HappyMaterial);
         yield return new WaitForSeconds(2);
         Chair.transform.DORotate(new Vector3(90,180,0), 1).SetEase(Ease.InOutCubic);
         CutCamera2.SetActive(false);
@@ -54,7 +55,7 @@ public class SceneDirector : MonoBehaviour
         //Chair.transform.DORotate(new Vector3(90,0,0), 1).SetEase(Ease.InCubic);
         //yield return new WaitForSeconds(0.75f);
         //Chair.transform.DOMoveX(0.5f,2).SetEase(Ease.OutCubic);
-        MUnity.RotatePart(AnimationDirector.BodyPart.Head,new Vector3(0,-10,0),1.5f, Ease.InOutCubic);
+        MUnity.RotatePart(AnimationDirector.BodyPart.Head,new Vector3(0,-20,0),1.5f, Ease.InOutCubic);
         //MUnity.RotatePart(AnimationDirector.BodyPart.ArmRight,new Vector3(-70,0,0),1, Ease.InOutCubic);
         //MUnity.RotatePart(AnimationDirector.BodyPart.ArmLeft,new Vector3(-70,0,0),1, Ease.InOutCubic);
         //yield return new WaitForSeconds(1.5f);
@@ -67,6 +68,7 @@ public class SceneDirector : MonoBehaviour
         //Dark.Dark();
         //yield return new WaitForSeconds(1);
         //SceneManager.LoadScene("[5MBD]Game");
+	yield return MUnityDial.StartDialAndWaitUntilEnd();
     }
     private IEnumerator Walking(AnimationDirector Player, float Speed)
     {
