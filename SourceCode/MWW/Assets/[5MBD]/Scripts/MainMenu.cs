@@ -1,7 +1,6 @@
 
 using UnityEngine;
 using DG.Tweening;
-using System.Collections;
 using UnityEngine.SceneManagement;
 public class MainMenu : MonoBehaviour
 {
@@ -9,7 +8,7 @@ public class MainMenu : MonoBehaviour
     [SerializeField] private RectTransform Buttons;
     [SerializeField] private DarkDirector Dark;
     
-    [SerializeField] private CutsceneDirector CutScene;
+    [SerializeField] private FMBDCutsceneDirector CutScene;
     private int pos = 128;
     private int posbtn = -768;
     private void Start()
