@@ -3,6 +3,7 @@ using System.Collections;
 using DG.Tweening;
 using Unity.Burst;
 using UnityEngine.SceneManagement;
+using TMPro;
 [BurstCompile]
 public class SceneDirector : MonoBehaviour
 {
@@ -12,6 +13,7 @@ public class SceneDirector : MonoBehaviour
     [SerializeField] private GameObject CutCamera2;
     [SerializeField] private GameObject Lights;
     [SerializeField] private GameObject Chair;
+    [SerializeField] private TMP_Text LaptopTerminal;
     [SerializeField] private DialGiver MUnityDial;
     [SerializeField] private ChangeMaterials LaptopScreen;
     [SerializeField] private ChangeMaterials MUnityHead;
@@ -29,11 +31,18 @@ public class SceneDirector : MonoBehaviour
     private IEnumerator CutScene()
     {
         //yield return new WaitForSeconds(1);
-        //Dark.UnDark();
-        //yield return new WaitForSeconds(3);
-        //Lights.SetActive(true);
-        //LaptopScreen.Change();
+        LaptopTerminal.text = "MUP Introduction";
         yield return new WaitForSeconds(2);
+	LaptopTerminal.text += "\nStarting...";
+	yield return new WaitForSeconds(1);
+	LaptopTerminal.text += "\n 3";
+	yield return new WaitForSeconds(1);
+	LaptopTerminal.text += "\n 2";
+	yield return new WaitForSeconds(1);
+	LaptopTerminal.text += "\n 1";
+	//Lights.SetActive(true);
+        //LaptopScreen.Change();
+        //yield return new WaitForSeconds(2);
         CutCamera1.SetActive(false);
         //MUnity.RotatePart(AnimationDirector.BodyPart.Head,new Vector3(35,0,0),4, Ease.Linear);
         //yield return new WaitForSeconds(4);

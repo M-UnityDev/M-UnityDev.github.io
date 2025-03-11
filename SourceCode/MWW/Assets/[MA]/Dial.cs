@@ -11,8 +11,10 @@ using System.Collections; using TMPro; using UnityEngine; using DG.Tweening; usi
     public AudioClip[] TextSoundF {set{TextSound = value;}}
     private bool IsEnded = false;
     public bool IsEndedF {get => IsEnded; set => IsEnded = value;}
+    private void Awake() => GetComponent<RectTransform>().anchorMax = Vector2.up;
     public IEnumerator Dialog()
     {
+	GetComponent<RectTransform>().DOAnchorMax(Vector2.one, 1f).SetEase(Ease.InOutCubic);
         DialogText.text = null;
         yield return new WaitForSeconds(0.5f);
         foreach (string TextPart in DialogParts)
@@ -29,5 +31,6 @@ using System.Collections; using TMPro; using UnityEngine; using DG.Tweening; usi
         }
         IsEnded = true;
         DialogText.text = null;
+	GetComponent<RectTransform>().DOAnchorMax(Vector2.up, 1f).SetEase(Ease.InOutCubic);
     }
 }
