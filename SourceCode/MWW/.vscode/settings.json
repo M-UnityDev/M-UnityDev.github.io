@@ -56,5 +56,5 @@
         "temp/": true,
         "Temp/": true
     },
-    "dotnet.defaultSolution": "M-Unity's Weird Website.sln"
+    "dotnet.defaultSolution": "MWW.sln"
 }
